@@ -1,6 +1,10 @@
+document.documentElement.classList.add("js");
+
 const header = document.querySelector(".site-header");
 const navLinks = document.querySelectorAll('.site-nav-island a[href^="#"]');
 const sections = [...document.querySelectorAll("main section[id]")];
+const videoWrapper = document.querySelector(".video-wrapper");
+const animatedSections = document.querySelectorAll("[data-animate-section]");
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
@@ -52,7 +56,7 @@ const handleFormSubmit = (event) => {
   const form = event.currentTarget;
   const input = form.querySelector('input[type="email"]');
   const feedback = form.querySelector(".form-feedback");
-  const formName = form.dataset.formName === "club" ? "Club request" : "Newsletter signup";
+  const formName = "Club request";
 
   if (!input || !feedback) {
     return;
@@ -65,6 +69,57 @@ const handleFormSubmit = (event) => {
 document.querySelectorAll("form[data-form-name]").forEach((form) => {
   form.addEventListener("submit", handleFormSubmit);
 });
+
+if (animatedSections.length) {
+  const revealSection = (section) => {
+    section.classList.add("is-visible");
+  };
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        revealSection(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.24 });
+
+    animatedSections.forEach((section) => sectionObserver.observe(section));
+  } else {
+    animatedSections.forEach(revealSection);
+  }
+}
+
+if (videoWrapper) {
+  const playerScript = document.createElement("script");
+  playerScript.src = "https://www.youtube.com/iframe_api";
+  document.head.append(playerScript);
+
+  videoWrapper.addEventListener("touchstart", () => {
+    videoWrapper.classList.add("is-video-peeking");
+  }, { passive: true });
+
+  window.onYouTubeIframeAPIReady = () => {
+    const iframe = document.querySelector("#highlight-reel-player");
+
+    if (!iframe || !window.YT || !window.YT.Player) {
+      return;
+    }
+
+    new window.YT.Player(iframe, {
+      events: {
+        onStateChange: (event) => {
+          const isActive = event.data === window.YT.PlayerState.PLAYING || event.data === window.YT.PlayerState.BUFFERING;
+          videoWrapper.classList.toggle("is-video-active", isActive);
+          videoWrapper.classList.toggle("is-video-peeking", isActive);
+        },
+      },
+    });
+  };
+}
 
 window.addEventListener("scroll", () => {
   window.requestAnimationFrame(() => {
