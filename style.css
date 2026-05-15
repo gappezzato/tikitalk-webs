@@ -485,29 +485,23 @@ p {
 .section--podcast-intro {
   position: relative;
   overflow: hidden;
+  padding-block: clamp(42px, 5vw, 58px);
+  color: var(--paper);
   background:
-    linear-gradient(135deg, rgba(245, 215, 43, 0.1), transparent 28%),
-    linear-gradient(315deg, rgba(58, 73, 158, 0.08), transparent 32%),
-    linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.93));
+    radial-gradient(circle at 12% 0, rgba(58, 73, 158, 0.18), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(233, 109, 41, 0.12), transparent 30%),
+    linear-gradient(180deg, #080808, #11100f);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 
 .section--podcast-intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.26;
-  background: url("about-bg.png") center / cover no-repeat;
-  filter: grayscale(0.08) contrast(1.08);
-  pointer-events: none;
-}
-
-.section--podcast-intro::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+  opacity: 0.22;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.54), rgba(255, 255, 255, 0.76) 45%, rgba(255, 255, 255, 0.62)),
-    repeating-linear-gradient(110deg, transparent 0 18px, rgba(14, 13, 13, 0.035) 18px 20px);
+    repeating-linear-gradient(110deg, transparent 0 18px, rgba(255, 255, 255, 0.06) 18px 20px),
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
   pointer-events: none;
 }
 
@@ -518,9 +512,10 @@ p {
   padding-block: clamp(124px, 13vw, 184px);
   color: var(--paper);
   background:
-    radial-gradient(circle at 14% 0, rgba(58, 73, 158, 0.3), transparent 28%),
-    radial-gradient(circle at 86% 20%, rgba(58, 73, 158, 0.34), transparent 32%),
-    linear-gradient(90deg, rgba(58, 73, 158, 0.24), rgba(58, 73, 158, 0.36)),
+    radial-gradient(circle at 14% 0, rgba(58, 73, 158, 0.28), transparent 28%),
+    radial-gradient(circle at 86% 20%, rgba(58, 73, 158, 0.32), transparent 32%),
+    linear-gradient(90deg, rgba(17, 20, 38, 0.76), rgba(27, 34, 86, 0.72)),
+    url("about-bg.png") 72% 28% / cover no-repeat,
     linear-gradient(180deg, #111426, #1b2256);
   border-bottom-color: rgba(255, 255, 255, 0.12);
 }
@@ -803,6 +798,18 @@ p {
   background: var(--orange);
 }
 
+.section--podcast-intro .eyebrow {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.section--podcast-intro h2 {
+  color: var(--paper);
+}
+
+.section--podcast-intro .podcast-intro__lede {
+  color: rgba(255, 255, 255, 0.76);
+}
+
 .podcast-intro__visual {
   position: relative;
   justify-self: end;
@@ -887,6 +894,7 @@ p {
 }
 
 .host-card {
+  position: relative;
   min-height: 100%;
   overflow: hidden;
   color: var(--paper);
@@ -896,7 +904,24 @@ p {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.1);
 }
 
+.host-card--vinny::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -2%;
+  right: -12%;
+  left: -8%;
+  height: min(86%, 540px);
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.22) 0 2px, transparent 2px 14px),
+    linear-gradient(135deg, #1597ff, #2454d9 62%, #1733a4);
+  clip-path: polygon(0 0, 38% 0, 100% 58%, 100% 88%, 72% 100%, 8% 42%);
+  transform: rotate(2deg);
+}
+
 .host-card__image {
+  position: relative;
+  z-index: 1;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -904,6 +929,8 @@ p {
 }
 
 .host-card__body {
+  position: relative;
+  z-index: 2;
   display: grid;
   gap: 6px;
   padding: 18px;
@@ -1243,7 +1270,7 @@ p {
   }
 
   .section--podcast-intro {
-    padding-bottom: clamp(18px, 4vw, 36px);
+    padding-block: clamp(32px, 6vw, 44px);
   }
 
   .podcast-intro-shell {
