@@ -527,7 +527,7 @@ p {
     radial-gradient(circle at 14% 0, rgba(58, 73, 158, 0.28), transparent 28%),
     radial-gradient(circle at 86% 20%, rgba(58, 73, 158, 0.32), transparent 32%),
     linear-gradient(90deg, rgba(17, 20, 38, 0.76), rgba(27, 34, 86, 0.72)),
-    url("about-bg.png") 72% 28% / cover no-repeat,
+    url("Images/about-bg.png") 72% 28% / cover no-repeat,
     linear-gradient(180deg, #111426, #1b2256);
   border-bottom-color: rgba(255, 255, 255, 0.12);
 }
@@ -1046,14 +1046,14 @@ p {
 }
 
 .host-card--gianni .host-card__face--back {
-  --host-back-image: url("Gianni-Host-Back.png");
+  --host-back-image: url("Images/Gianni-Host-Back.png");
   --host-back-position: 52% center;
   --host-back-transform: none;
   --host-back-size: 126% auto;
 }
 
 .host-card--vinny .host-card__face--back {
-  --host-back-image: url("Vinny playing soccer.jpg");
+  --host-back-image: url("Images/Vinny playing soccer.jpg");
   --host-back-position: 140% center;
 }
 
@@ -1125,7 +1125,7 @@ p {
 .section--contact::before {
   background:
     linear-gradient(105deg, rgba(218, 41, 42, 0.18), transparent 34%, rgba(58, 73, 158, 0.22) 68%, rgba(66, 165, 72, 0.16)),
-    url("Step and repeat tikitalk BLACK.png") center / cover no-repeat;
+    url("Images/Step and repeat tikitalk BLACK.png") center / cover no-repeat;
   opacity: 0.48;
 }
 
