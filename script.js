@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll('.site-nav-island a[href^="#"]');
 const sections = [...document.querySelectorAll("main section[id]")];
 const videoWrapper = document.querySelector(".video-wrapper");
 const animatedSections = document.querySelectorAll("[data-animate-section]");
+const flipCards = document.querySelectorAll("[data-flip-card]");
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {
@@ -50,24 +51,38 @@ const setHeaderState = () => {
   header.classList.toggle("site-header--scrolled", window.scrollY > 24);
 };
 
-const handleFormSubmit = (event) => {
-  event.preventDefault();
+const setFlipCardState = (card, isFlipped) => {
+  const frontFace = card.querySelector(".host-card__face--front");
+  const backFace = card.querySelector(".host-card__face--back");
 
-  const form = event.currentTarget;
-  const input = form.querySelector('input[type="email"]');
-  const feedback = form.querySelector(".form-feedback");
-  const formName = "Club request";
+  card.classList.toggle("is-flipped", isFlipped);
+  card.setAttribute("aria-pressed", String(isFlipped));
+  card.setAttribute("aria-label", isFlipped ? card.dataset.backLabel : card.dataset.frontLabel);
 
-  if (!input || !feedback) {
-    return;
+  if (frontFace) {
+    frontFace.setAttribute("aria-hidden", String(isFlipped));
   }
 
-  feedback.textContent = `${formName} saved for ${input.value}. You are on the list for the next drop.`;
-  input.value = "";
+  if (backFace) {
+    backFace.setAttribute("aria-hidden", String(!isFlipped));
+  }
 };
 
-document.querySelectorAll("form[data-form-name]").forEach((form) => {
-  form.addEventListener("submit", handleFormSubmit);
+flipCards.forEach((card) => {
+  setFlipCardState(card, false);
+
+  card.addEventListener("click", () => {
+    setFlipCardState(card, !card.classList.contains("is-flipped"));
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    setFlipCardState(card, !card.classList.contains("is-flipped"));
+  });
 });
 
 if (animatedSections.length) {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tiki-Taka Tiki-Talk is a world soccer podcast for global football culture, match reactions, and tactical conversation.">
-  <title>Tiki Talk | Soccer Podcast &amp; Club</title>
+  <title>Tiki Talk | Soccer Podcast</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,10 +71,10 @@
     <div class="site-frame site-header__inner">
       <nav class="site-nav-island" aria-label="Primary navigation">
         <a href="#home">Home</a>
-        <a href="#latest-episode">Latest Episode</a>
+        <a href="#latest-episode">Episode</a>
         <a href="#about">About</a>
         <a href="#hosts">Hosts</a>
-        <a class="button button--primary site-nav-island__cta" href="#club">Join Club</a>
+        <a class="button button--primary site-nav-island__cta" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -82,7 +82,7 @@
   <main>
     <section id="home" class="hero">
       <div class="hero__media" aria-hidden="true">
-        <img src="tiki-hero-poster.jpg" alt="" class="hero__media-image" fetchpriority="high">
+        <img src="4K Enhanced Hero Section.png" alt="" class="hero__media-image" fetchpriority="high">
       </div>
       <div class="site-frame hero__layout">
         <div class="hero__content">
@@ -104,7 +104,7 @@
     <section id="latest-episode" class="section section--highlight-reel" aria-labelledby="latest-episode-title" data-animate-section>
       <div class="site-frame highlight-reel">
         <div class="highlight-reel__intro">
-          <p class="eyebrow eyebrow--light">Latest Episode</p>
+          <p class="eyebrow eyebrow--light">Episode</p>
           <h2 id="latest-episode-title">
             <span>Watch the</span>
             <span>latest episode</span>
@@ -159,7 +159,7 @@
     <section id="about" class="section section--podcast-intro">
       <div class="site-frame podcast-intro-shell">
         <div class="podcast-intro">
-          <p class="eyebrow">About Tiki-Taka Tiki-Talk</p>
+          <p class="eyebrow">About <span class="brand-lock">Tiki-Taka Tiki-Talk</span></p>
           <h2>Soccer conversations built around the way the game moves.</h2>
           <p class="podcast-intro__lede">We are an international soccer podcast built on fan interaction, live streaming, and the chaos of the sport we all obsess over. From GOAT debates to Champions League drama, and from unboxing collectibles to live watch along parties, we cover the biggest moments in football with energy and personality. Smart takes, good vibes, and fútbol culture all in one place.</p>
         </div>
@@ -173,78 +173,149 @@
       <div class="site-frame hosts-showcase">
         <div class="hosts-showcase__intro">
           <p class="eyebrow">The Hosts</p>
-          <h2>Meet the voices behind the soccer chaos.</h2>
-          <p>The people driving the debates, reactions, and culture around every Tiki-Taka Tiki-Talk episode.</p>
+          <h2>Meet the voices behind the fútbol podcast.</h2>
+          <p>The people driving the debates, reactions, and culture around every <span class="brand-lock">Tiki-Taka Tiki-Talk</span> episode.</p>
         </div>
         <div class="hosts-grid" aria-label="Podcast hosts">
-          <article class="host-card">
-            <img src="gianni-host.png" alt="Gianni wearing an Argentina jersey" class="host-card__image" loading="lazy">
-            <div class="host-card__body">
-              <p>Host</p>
-              <h3>Gianni</h3>
+          <article class="host-card host-card--gianni" role="button" tabindex="0" aria-pressed="false" aria-label="Flip Gianni host card to read biography" data-flip-card data-front-label="Flip Gianni host card to read biography" data-back-label="Return Gianni host card to portrait">
+            <div class="host-card__inner">
+              <div class="host-card__face host-card__face--front">
+                <img src="gianni-host.png" alt="Gianni wearing an Argentina jersey" class="host-card__image" loading="lazy">
+                <div class="host-card__body">
+                  <p>Host</p>
+                  <h3>Gianni</h3>
+                </div>
+              </div>
+              <div class="host-card__face host-card__face--back" id="gianni-host-bio" aria-hidden="true">
+                <div class="host-card__bio">
+                  <p class="host-card__role">Host Bio</p>
+                  <h3>Gianni</h3>
+                  <p>Gianni's first language is fútbol. An Argentine-Italian who has loved the game since he could crawl. He brings passion, experience, and ball knowledge to every episode. If he's not watching his team River Plate, you can find him cruising through the city or modding one of his cars. Once home, he puts on the chef hat and whips up delicious meals from his Italian-Argentine recipes.</p>
+                </div>
+              </div>
             </div>
           </article>
-          <article class="host-card host-card--vinny">
-            <img src="Vinny-host-Final.png" alt="Vinny seated in front of a blue Tiki-Taka Tiki-Talk graphic" class="host-card__image" loading="lazy">
-            <div class="host-card__body">
-              <p>Host</p>
-              <h3>Vinny</h3>
+          <article class="host-card host-card--vinny" role="button" tabindex="0" aria-pressed="false" aria-label="Flip Vinny host card to read biography" data-flip-card data-front-label="Flip Vinny host card to read biography" data-back-label="Return Vinny host card to portrait">
+            <div class="host-card__inner">
+              <div class="host-card__face host-card__face--front">
+                <img src="Vinny-host-Final.png" alt="Vinny seated in front of a blue Tiki-Taka Tiki-Talk graphic" class="host-card__image" loading="lazy">
+                <div class="host-card__body">
+                  <p>Host</p>
+                  <h3>Vinny</h3>
+                </div>
+              </div>
+              <div class="host-card__face host-card__face--back" id="vinny-host-bio" aria-hidden="true">
+                <div class="host-card__bio">
+                  <p class="host-card__role">Host Bio</p>
+                  <h3>Vinny</h3>
+                  <p>Vinny speaks soccer with the eye of a scout and the brain of an analyst. He has deep international football insight, with roots in Albanian culture and is a huge Juventus fan. Vinny turns every conversation into a full match report, bringing sharp debate, detailed perspective, and true football IQ to every episode. Away from the game, Vinny stays dialed in by obsessing over great movies, getting lost in guitar riffs, and building his health and performance wellness.</p>
+                </div>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="club" class="section section--club">
-      <div class="site-frame club-shell">
-        <div class="club-shell__intro">
-          <p class="eyebrow eyebrow--light">Join Our Club</p>
-          <h2>Subscribe for exclusive content and early access.</h2>
-          <p>The club is built for listeners who want more than updates: exclusive content, members-first releases, and early access before the public drop.</p>
-          <div class="club-shell__actions">
-            <a class="button button--light" href="#club-access-form">Join The Club</a>
-            <a class="button button--outline-light" href="#latest-episode">Latest Episode</a>
+    <section id="contact" class="section section--contact" aria-labelledby="contact-title">
+      <div class="site-frame contact-shell">
+        <div class="contact-shell__intro">
+          <p class="eyebrow eyebrow--light">Contact Us</p>
+          <h2 id="contact-title">Partner with <span class="contact-title__brand brand-lock">Tiki-Taka Tiki-Talk.</span></h2>
+          <p>Contact us to do signature match events, fan festivals, and watch along parties with merch, collectibles, and collabs.</p>
+          <div class="contact-shell__actions">
+            <a class="button button--light" href="#contact-form">Start a Project</a>
+            <a class="button button--outline-light" href="#latest-episode">Watch Latest</a>
           </div>
-          <img src="club-graphic.png" alt="Join Tiki-Talk Club" class="club-shell__image" loading="lazy">
         </div>
-        <div class="club-shell__card">
-          <p class="club-shell__label">Members Access</p>
-          <h3>What opens when you join</h3>
-          <p>Club membership is the premium route into the show: bonus material, priority access, and a closer line to everything we publish around Tiki-Taka Tiki-Talk.</p>
-          <form class="club-form" id="club-access-form" data-form-name="club">
-            <p class="coming-soon-banner coming-soon-banner--club">Coming soon</p>
-            <label class="sr-only" for="club-email">Email address for club access</label>
-            <input id="club-email" name="club-email" type="email" autocomplete="email" placeholder="Email for club access" required>
-            <button class="button button--primary" type="submit">Join Club</button>
-            <p class="form-feedback" role="status"></p>
-          </form>
-          <ul class="perk-list">
-            <li>Exclusive bonus content built around the main show</li>
-            <li>Early access to selected episodes and special releases</li>
-            <li>Members-first updates when new extras go live</li>
-          </ul>
+        <div class="services-grid" aria-label="Tiki-Taka Tiki-Talk services">
+          <article class="service-card service-card--red">
+            <span class="service-card__number">01</span>
+            <h3>Events</h3>
+            <p>Live podcast tapings, fan meetups, tournament nights, sponsor activations, and soccer culture pop-ups.</p>
+          </article>
+          <article class="service-card service-card--blue">
+            <span class="service-card__number">02</span>
+            <h3>Watch-Along Parties</h3>
+            <p>Hosted match reactions, derby day hangouts, World Cup watch rooms, and streaming-friendly fan coverage.</p>
+          </article>
+          <article class="service-card service-card--yellow">
+            <span class="service-card__number">03</span>
+            <h3>Merch</h3>
+            <p>Limited drops, collab apparel, custom show goods, and matchday bundles for listeners and partners.</p>
+          </article>
+          <article class="service-card service-card--green">
+            <span class="service-card__number">04</span>
+            <h3>Collectibles</h3>
+            <p>Sticker drops, trading cards, swaps, giveaway inserts, and collectible ideas built for the real football faithful.</p>
+          </article>
+          <article class="service-card service-card--orange">
+            <span class="service-card__number">05</span>
+            <h3>Guest Spots</h3>
+            <p>Players, creators, local clubs, collectors, superfans, and analysts who can add voice to the show.</p>
+          </article>
+          <article class="service-card service-card--black">
+            <span class="service-card__number">06</span>
+            <h3>Collabs</h3>
+            <p>Brand partnerships, social content, venue nights, prediction games, and new ideas around the global game.</p>
+          </article>
         </div>
+      </div>
+      <div class="site-frame contact-panel">
+        <div class="contact-panel__copy">
+          <p class="contact-panel__label">Let's Build It</p>
+          <h3>Tell us what kind of football moment you want to make.</h3>
+          <p>Use this form to contact us for bookings, collaborations, merch inquiries, sticker drops, sponsor ideas, guest pitches, and anything else that belongs in the Tiki-Talk universe.</p>
+        </div>
+        <form class="contact-form" id="contact-form" action="https://formsubmit.co/henrypmestre@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Tiki-Talk website message">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="contact-form__field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-service">What are you reaching out about?</label>
+            <select id="contact-service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Events</option>
+              <option>Watch-along parties</option>
+              <option>Merch</option>
+              <option>Collectibles</option>
+              <option>Guest spots</option>
+              <option>Brand collaboration</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="contact-form__field">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell us the match, date, idea, or partnership you have in mind." required></textarea>
+          </div>
+          <button class="button button--primary" type="submit">Send Message</button>
+        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="site-frame site-footer__panel">
-      <img src="logo.png" alt="Tiki-Taka Tiki-Talk Logo" class="site-footer__logo">
+      <img src="Tiki Talk Mic with 2 lines transparent.png" alt="Tiki-Taka Tiki-Talk Logo" class="site-footer__logo">
       <nav class="site-footer__menu" aria-label="Footer navigation">
         <a href="#home">Home</a>
-        <a href="#latest-episode">Latest Episode</a>
+        <a href="#latest-episode">Episode</a>
         <a href="#about">About</a>
         <a href="#hosts">Hosts</a>
+        <a href="#contact">Contact</a>
       </nav>
       <div class="site-footer__subscribe">
-        <p class="site-footer__label">Tiki-Taka Tiki-Talk</p>
+        <p class="site-footer__label"><span class="brand-lock">Tiki-Taka Tiki-Talk</span></p>
         <h2>World Soccer Network</h2>
         <p>Podcast drops, watch parties, culture, and smart match talk from every corner of the game.</p>
-      </div>
-      <div class="site-footer__actions">
-        <a class="button button--footer" href="#latest-episode">Latest Episode</a>
-        <a class="button button--ghost" href="#club">Join Club</a>
       </div>
     </div>
   </footer>

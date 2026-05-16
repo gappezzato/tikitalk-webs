@@ -1,3 +1,6 @@
 *.mov
 *.mov
 *.mov
+__pycache__/
+*.pyc
+.DS_Store
